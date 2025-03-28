@@ -1,5 +1,5 @@
 import compiler from './compiler.js';
 
-const input = '(add 2 (sub 4 3))';
+const input = '(add 2 3 4 (sub 6 5))';
 const output = compiler(input);
-console.log(JSON.stringify(output, null, 2));
+console.log(output);

@@ -1,6 +1,7 @@
 import tokeniser from './tokeniser.js';
 import parser from './parser.js';
 import transformer from './transformer.js';
+import generateCode from './generateCode.js';
 
 export default function compiler(input) {
     // 1. Lexical Analysis - Break the input code (string) into the basic syntax of language (array of objects)
@@ -10,6 +11,8 @@ export default function compiler(input) {
     const lispAST = parser(tokens);
     // 3. Transformation - transforms our original List AST into our target Javascript AST
     const jsAST = transformer(lispAST);
-    // 4. Code Generation
-    return jsAST;
+    // 4. Code Generation - tranforms our target AST (object of objects) into actual code (string)
+    const jsCode = generateCode(jsAST);
+
+    return jsCode;
 }

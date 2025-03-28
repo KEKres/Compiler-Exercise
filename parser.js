@@ -1,4 +1,4 @@
-// This file recieves the tokens (array of objects) as an argument and returns an AST (object of objects)
+// This file receves the tokens (array of objects) as an argument and returns an AST (object of objects)
 export default function parser(tokens) {
     // Create a pointer to the current token and increment it when needed.
     // The walk function will be executed in a recursive manner and place each new node in the current place in the AST
